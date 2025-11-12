@@ -1,0 +1,14 @@
+<testdata>
+    <user>
+        <firstname>John</firstname>
+        <lastname>Doe</lastname>
+        <email>john.doe@example.com</email>
+	    <mobile>1231234456</mobile>
+        <subject>Maths</subject>
+        <gender>Male</gender>
+        <hobbies>
+            <hobby>Reading</hobby>
+            <hobby>Music</hobby>
+        </hobbies>
+    </user>
+</testdata>
