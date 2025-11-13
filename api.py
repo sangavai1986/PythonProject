@@ -2,10 +2,10 @@ import json
 
 import requests
 
-base_url = "https://api.restful-api.dev"
+#base_url = "https://api.restful-api.dev"
 
 def get_request():
-    url = base_url + "/objects?id=3&id=5"
+    url = BASE_URL + "/objects?id=3&id=5"
     print(url)
     response = requests.get(url)
     json_data = response.json()
