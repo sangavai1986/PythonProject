@@ -23,7 +23,8 @@ driver.get("https://www.google.com")
 WebDriverWait(driver,5).until(
     EC.presence_of_element_located((By.ID,"APjFqb"))
 )
-
+time.sleep(10)
+driver.save_screenshot("google.png")
 input_element = driver.find_element(By.ID,"APjFqb")
 #input_element.clear()
 input_element.send_keys("Python" +Keys.ENTER)
@@ -41,9 +42,11 @@ driver.implicitly_wait(10);
 results = driver.find_elements(By.CSS_SELECTOR,"h3");
 for result in results:
     title = result.text;
-    link = driver.find_element(By.XPATH,"..").get_attribute("href");
+    links = driver.find_elements(By.TAG_NAME,"a");
     print("Title : "+title);
-    print("Link :"+link);
+    for link in links:
+        print(link.get_attribute("href"))
+
 #link = driver.find_element(By.PARTIAL_LINK_TEXT,"Python Tutorial")
 
 #link.click()

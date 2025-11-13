@@ -6,7 +6,7 @@ def test_addition():
     print("Addition")
     assert 1 + 1 == 2
 
-@pytest.mark.re
+@pytest.mark.regression
 def test_subtraction():
     assert 5 - 2 == 3
 

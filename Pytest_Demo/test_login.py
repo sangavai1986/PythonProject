@@ -8,6 +8,10 @@ def demo_fixture(request):
 def testlogin(demo_fixture):
     print("Login successful")
 
+@pytest.mark.parametrize("username,password",[("user1","pass1"),("user2","pass2")])
+def test_loginwith(username,password):
+    print(f"Login with{username} and password {password}")
+
 # @pytest.mark.regression
 # def testlogoff():
 #     print("Logoff success")
