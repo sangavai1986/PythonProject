@@ -21,8 +21,12 @@ user_data = [ {"username": "standard_user","password": "secret_sauce"}]
 def test_logoff(login,request):
     driver,params = login
     driver.find_element(By.ID,"react-burger-menu-btn").click()
+    WebDriverWait(driver,5).until(
+        EC.element_to_be_clickable((By.ID,"logout_sidebar_link"))
+    )
+    #driver.implicitly_wait(5)
     driver.find_element(By.ID,"logout_sidebar_link").click()
-    time.sleep(10)
+
     WebDriverWait(driver,5).until(
         EC.presence_of_element_located((By.XPATH,"//div[text()='Swag Labs']"))
     )
