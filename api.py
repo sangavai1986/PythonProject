@@ -2,9 +2,9 @@ import json
 
 import requests
 
-#base_url = "https://api.restful-api.dev"
-import os
-BASE_URL = os.getenv("BASE_URL")
+BASE_URL = "https://api.restful-api.dev"
+#import os
+#BASE_URL = os.getenv("BASE_URL")
 def get_request():
     url = BASE_URL + "/objects?id=3&id=5"
     print(url)
@@ -16,7 +16,7 @@ def get_request():
 #get_request()
 
 def post_request():
-    url = BASE_URL + "/objects"
+    url = BASE_URL + "/objects?id=12"
     print(url)
     data = {
         "name": "Apple MacBook Pro 16",
@@ -41,6 +41,10 @@ user_id = post_request()
 
 def put_request(user_id):
     url = BASE_URL + f"/objects/{user_id}"
+    pre_response = requests.get(url)
+    print("RESPONSE BEFORE UPDATE")
+    print(pre_response.json)
+
     data = {
     "name": "Apple MacBook Pro 20",
     "data": {
@@ -61,7 +65,7 @@ def put_request(user_id):
 put_request(user_id)
 
 def delete_request(user_id):
-    url = base_url + f"/objects/{user_id}"
+    url = BASE_URL + f"/objects/{user_id}"
     response = requests.delete(url)
     assert response.status_code == 200
     json_data = response.json()

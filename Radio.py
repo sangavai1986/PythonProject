@@ -23,5 +23,11 @@ driver.execute_script("arguments[0].scrollIntoView(true);", yes_label)
 
 # Click the label (which will select the radio button)
 yes_label.click()
+yes_label = driver.find_element(By.ID,"yesRadio")
+time.sleep(5)
+if yes_label.is_selected():
+    print("Radio is selected")
+else:
+    print("Radio button Yes not selected")
 
 driver.quit()

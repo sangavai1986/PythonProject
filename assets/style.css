@@ -124,6 +124,7 @@ span.xpassed,
   border-radius: 3px;
   padding: 5px 7px;
   margin: 10px 0 10px calc(100% - 80px);
+  margin-bottom: -42px;
   cursor: pointer;
   background-color: #e6e6e6;
 }
@@ -137,8 +138,8 @@ span.xpassed,
 .logwrapper .log {
   min-height: 40px;
   position: relative;
-  top: -50px;
-  height: calc(100% + 50px);
+  top: 2px;
+  height: calc(100% + 40px);
   border: 1px solid #e6e6e6;
   color: black;
   display: block;
@@ -151,7 +152,7 @@ span.xpassed,
 div.media {
   border: 1px solid #e6e6e6;
   float: right;
-  height: 240px;
+  height: 228px;
   margin: 0 5px;
   overflow: hidden;
   width: 320px;
@@ -197,10 +198,10 @@ div.media {
   align-items: center;
 }
 
-.collapsible td:not(.col-links) {
+.oldc td:not(.col-links) {
   cursor: pointer;
 }
-.collapsible td:not(.col-links):hover::after {
+.oldc td:not(.col-links):hover::after {
   color: #bbb;
   font-style: italic;
   cursor: pointer;
@@ -210,15 +211,15 @@ div.media {
   width: 130px;
 }
 .col-result:hover::after {
-  content: " (hide details)";
+  content: "";
 }
 
 .col-result.collapsed:hover::after {
-  content: " (show details)";
+  content: "";
 }
 
 #environment-header h2:hover::after {
-  content: " (hide details)";
+  content: "";
   color: #bbb;
   font-style: italic;
   cursor: pointer;
@@ -226,7 +227,7 @@ div.media {
 }
 
 #environment-header.collapsed h2:hover::after {
-  content: " (show details)";
+  content: "";
   color: #bbb;
   font-style: italic;
   cursor: pointer;
