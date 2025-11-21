@@ -1,3 +1,4 @@
+import logging
 import time
 
 import pytest
@@ -15,21 +16,26 @@ def test_add_products_to_cart(login,request):
     driver.get("https://www.saucedemo.com/inventory.html")
     username = params["username"]
     products = params["products"]
+    product_count = len(products)
     #products = ["Sauce Labs Backpack", "Sauce Labs Bike Light"]
     for product_name in products:
 
         add_button = driver.find_element(By.XPATH, f"//div[text()='{product_name}']/following::button[1]")
         add_button.click()
-        time.sleep(10)
-        print(f"product {product_name} added to cart\n")
+        remove_button = driver.find_element(By.XPATH, f"//div[text()='{product_name}']/following::button[1]")
+        if remove_button.text == "Remove":
+            print(f"product {product_name} added to cart\n")
+        #print(f"product {product_name} added to cart\n")
     # Verify shopping cart badge
     try:
         badge = driver.find_element(By.CSS_SELECTOR, "[data-test='shopping-cart-badge']").text
-        print ("PRODUCT COUNT"+badge)
-        #assert int(badge.text) == len(products)
-        print(f"{len(products)} products added to cart for {username}")
+        #print("PRODUCTS "+products)
+        print("PRODUCT COUNT "+badge)
+        #print("LENGTH "+len(products))
+        assert int(badge) == product_count
+        logging.info(f"{len(products)} products added to cart for {username}")
     except:
-        print(f"Cart badge not found for {username}")
+        logging.error(f"Cart badge not found for {username}")
 
     # Navigate to cart page
     driver.find_element(By.CLASS_NAME, "shopping_cart_link").click()

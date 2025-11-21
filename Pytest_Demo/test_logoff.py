@@ -1,3 +1,4 @@
+import logging
 import time
 
 import pytest
@@ -5,6 +6,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
+from Pytest_Demo.conftest_old import logout
 
 '''
 driver = webdriver.Chrome()
@@ -16,17 +19,23 @@ driver.find_element(By.NAME, "login-button").click()
 time.sleep(10)
 driver.quit()
 '''
-user_data = [ {"username": "standard_user","password": "secret_sauce"}]
-@pytest.mark.parametrize( "login",user_data ,indirect=True)
-def test_logoff(login,request):
-    driver,params = login
-    driver.find_element(By.ID,"react-burger-menu-btn").click()
-    WebDriverWait(driver,5).until(
-        EC.element_to_be_clickable((By.ID,"logout_sidebar_link"))
-    )
-    #driver.implicitly_wait(5)
-    driver.find_element(By.ID,"logout_sidebar_link").click()
+@pytest.mark.parametrize(
+    "login",
+    [
+        {"username": "standard_user", "password": "secret_sauce"},
 
-    WebDriverWait(driver,5).until(
-        EC.presence_of_element_located((By.XPATH,"//div[text()='Swag Labs']"))
-    )
+    ],
+    indirect=True
+)
+
+def test_logoff(login):
+    driver,params = login
+
+    logout(driver)
+    print(driver.title)
+    try:
+        assert "Swag" in driver.title
+        logging.info(f"User {params['username']} logged off")
+    except BaseException as e:
+        logging.info(f"User {params['username']} Log off unsuccessful")
+        logging.info("ERROR IS"+e)

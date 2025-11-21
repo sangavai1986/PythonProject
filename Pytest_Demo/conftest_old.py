@@ -32,7 +32,8 @@ def driver():
     logging.info("Quitting Chrome driver")
     driver.quit()
 
-@pytest.fixture(scope="function")
+
+@pytest.fixture
 def login(request, driver, base_url ):
     """
     Log in before each test function.
@@ -46,6 +47,9 @@ def login(request, driver, base_url ):
 
     driver.find_element(By.ID, "user-name").send_keys(username)
     driver.find_element(By.ID, "password").send_keys(password)
+    WebDriverWait(driver,5).until(
+        EC.element_to_be_clickable((By.NAME, "login-button"))
+    )
     driver.find_element(By.NAME, "login-button").click()
 
 
@@ -53,6 +57,21 @@ def login(request, driver, base_url ):
     WebDriverWait(driver, 5).until(
         EC.visibility_of_element_located((By.CLASS_NAME, "app_logo"))
     )
-    print(f"Login successful for user: {username}")
+    logging.info(f"Login successful for user: {username}")
 
     return driver,request.param
+
+
+def logout(driver):
+    # Open side menu
+    driver.find_element(By.ID, "react-burger-menu-btn").click()
+    # Wait until logout link clickable
+    WebDriverWait(driver, 5).until(
+        EC.element_to_be_clickable((By.ID, "logout_sidebar_link"))
+    )
+    # Click logout
+    driver.find_element(By.ID, "logout_sidebar_link").click()
+    # Wait until login page is visible
+    WebDriverWait(driver, 5).until(
+        EC.visibility_of_element_located((By.ID, "login-button"))
+    )

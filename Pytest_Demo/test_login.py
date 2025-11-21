@@ -19,6 +19,7 @@ def testlogin(demo_fixture):
     logging.info("Login successful")
 
 
+#@pytest.mark.parametrize("driver", ["chrome", "firefox", "edge"], indirect=True)
 @pytest.mark.parametrize(
     "login",
     [

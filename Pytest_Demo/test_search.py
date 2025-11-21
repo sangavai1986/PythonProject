@@ -1,3 +1,5 @@
+import logging
+
 import pytest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -23,8 +25,8 @@ def test_search_product(login, request):
         try:
             element = driver.find_element(By.XPATH, f"//div[text()='{product_name}']")
             assert element.is_displayed()
-            print(f"Product '{product_name}' found")
+            logging.info(f"Product '{product_name}' found")
         except:
-            print(f"Product '{product_name}' not found")
+            logging.error(f"Product '{product_name}' not found")
 
 
