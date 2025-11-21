@@ -1,0 +1,2 @@
+[32mINFO    [0m root:conftest.py:21 Starting Chrome driver
+[32mINFO    [0m root:conftest.py:32 Quitting Chrome driver

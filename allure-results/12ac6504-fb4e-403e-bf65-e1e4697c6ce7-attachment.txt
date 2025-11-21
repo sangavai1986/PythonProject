@@ -1,0 +1,4 @@
+[32mINFO    [0m root:conftest.py:21 Starting Chrome driver
+[32mINFO    [0m root:conftest.py:60 Login successful for user: standard_user
+[32mINFO    [0m root:test_search.py:28 Product 'Sauce Labs Backpack' found
+[32mINFO    [0m root:conftest.py:32 Quitting Chrome driver

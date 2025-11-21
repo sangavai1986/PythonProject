@@ -1,0 +1,3 @@
+[32mINFO    [0m root:conftest.py:39 Running on chrome browser
+[32mINFO    [0m root:conftest.py:69 Login successful for user: visual_user
+[32mINFO    [0m root:test_login.py:36 Login passed for {'username': 'visual_user', 'password': 'secret_sauce'}

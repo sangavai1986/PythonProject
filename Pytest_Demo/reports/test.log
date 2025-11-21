@@ -1,0 +1,19 @@
+2025-11-21 14:15:24 [INFO] []
+2025-11-21 14:15:24 [INFO] Running on chrome browser
+2025-11-21 14:15:32 [INFO] Login successful for user: standard_user
+2025-11-21 14:15:33 [INFO] 2 products added to cart for standard_user
+2025-11-21 14:15:35 [INFO] Login successful
+2025-11-21 14:15:35 [INFO] Login successful
+2025-11-21 14:15:35 [INFO] Running on chrome browser
+2025-11-21 14:15:38 [INFO] Login successful for user: standard_user
+2025-11-21 14:15:38 [INFO] Login passed for {'username': 'standard_user', 'password': 'secret_sauce'}
+2025-11-21 14:15:41 [INFO] Running on chrome browser
+2025-11-21 14:15:46 [INFO] Login successful for user: visual_user
+2025-11-21 14:15:46 [INFO] Login passed for {'username': 'visual_user', 'password': 'secret_sauce'}
+2025-11-21 14:15:52 [INFO] Running on chrome browser
+2025-11-21 14:15:59 [INFO] Login successful for user: standard_user
+2025-11-21 14:15:59 [INFO] User standard_user logged off
+2025-11-21 14:16:01 [INFO] Running on chrome browser
+2025-11-21 14:16:07 [INFO] Running on chrome browser
+2025-11-21 14:16:12 [INFO] Login successful for user: standard_user
+2025-11-21 14:16:13 [INFO] Product 'Sauce Labs Backpack' found

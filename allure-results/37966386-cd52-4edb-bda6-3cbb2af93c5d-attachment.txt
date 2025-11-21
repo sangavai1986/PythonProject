@@ -1,0 +1,4 @@
+[32mINFO    [0m root:conftest.py:21 Starting Chrome driver
+[32mINFO    [0m root:conftest.py:60 Login successful for user: standard_user
+[32mINFO    [0m root:test_inventory.py:36 2 products added to cart for standard_user
+[32mINFO    [0m root:conftest.py:32 Quitting Chrome driver

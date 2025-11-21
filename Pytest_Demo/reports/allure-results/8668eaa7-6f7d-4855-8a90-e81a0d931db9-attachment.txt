@@ -1,0 +1,3 @@
+standard_user
+['Sauce Labs Backpack']
+PRODUCT NAME: Sauce Labs Backpack

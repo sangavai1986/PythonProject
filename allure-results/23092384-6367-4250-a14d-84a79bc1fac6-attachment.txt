@@ -1,0 +1,4 @@
+[32mINFO    [0m root:conftest.py:21 Starting Chrome driver
+[32mINFO    [0m root:conftest.py:60 Login successful for user: standard_user
+[32mINFO    [0m root:test_logoff.py:38 User standard_user logged off
+[32mINFO    [0m root:conftest.py:32 Quitting Chrome driver

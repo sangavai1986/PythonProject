@@ -1,0 +1,6 @@
+Inside base_url
+product Sauce Labs Backpack added to cart
+
+product Sauce Labs Bike Light added to cart
+
+PRODUCT COUNT 2

@@ -1,0 +1,4 @@
+[32mINFO    [0m root:conftest.py:24 ['edge', 'chrome']
+[32mINFO    [0m root:conftest.py:39 Running on edge browser
+[32mINFO    [0m root:conftest.py:69 Login successful for user: standard_user
+[32mINFO    [0m root:test_search.py:28 Product 'Sauce Labs Backpack' found

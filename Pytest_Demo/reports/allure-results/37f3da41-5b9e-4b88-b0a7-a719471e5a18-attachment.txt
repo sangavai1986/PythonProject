@@ -1,0 +1,5 @@
+Inside base_url
+Edge driver creation
+standard_user
+['Sauce Labs Backpack']
+PRODUCT NAME: Sauce Labs Backpack

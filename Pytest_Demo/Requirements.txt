@@ -1,0 +1,21 @@
+pip install selenium
+pip install pytest
+pip install webdrivermanager
+pip install pytest-xdist for parallel execution
+pip install allure-pytest for report generation
+pip install pytest-rerunfailures for rerunning the testcase
+Usage
+pytest --reruns 2 (rerunning the testcase twice)
+pytest --reruns 2 --reruns-delay 5 (with 5 seconds delay for next re-run)
+
+Under VCS --> Enable VCS (converting the VCS tab to Git, Need Git username/password for first initialization)
+Git --> Share Code on GitHub (GitHub Username/password needed initially)
+Jenkins --> java 17/21 version is supported
+"C:\Program Files\Java\jdk-21\bin\java" -jar "C:\Program Files\Jenkins\Jenkins.war"
+taskkill /f /PID 3844 (Run as admin, if any process uses port 8080)
+Usage
+pytest --alluredir=allure-results (exec on bash/python terminal)
+pytest --alluredir=allure-results --reruns 2 --reruns-delay 3
+allure serve allure-results(exec on windows bash)
+
+
